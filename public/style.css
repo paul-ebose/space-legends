@@ -1,7 +1,7 @@
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-size: 17px;
+  font-size: 15px;
 }
 
 *,
@@ -24,6 +24,7 @@ body {
   color: var(--text-primary);
 }
 
+header,
 main {
   margin-left: 5rem;
   padding: 1rem;
@@ -41,6 +42,19 @@ h6 {
   margin: 1rem 0;
   color: var(--text-theme);
   font-family: Consolas;
+}
+
+hr {
+  margin: 3rem 0;
+  border: none;
+  border-bottom: 5px dashed var(--bg-primary);
+}
+
+.heading {
+  text-align: center;
+  color: var(--text-theme);
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 .navbar {
@@ -67,11 +81,11 @@ h6 {
 
 .nav-item:hover #aliens {
   transform: rotate(0deg) scale(1.15);
-  animation: squiggle 1000ms;
+  animation: squiggle 500ms;
 }
 
 .navbar:hover .logo svg {
-  transform: rotate(-270deg);
+  transform: rotate(-360deg);
 }
 
 .navbar-nav {
@@ -148,23 +162,15 @@ h6 {
 /* @--- */
 @keyframes squiggle {
   0% {
-    transform: skew(2deg) scaleY(1.154);
+    transform: scale(1.09);
   }
 
-  45% {
-    transform: skew(-1deg) scaleX(1.164);
-  }
-
-  60% {
-    transform: skew(0deg) scaleY(1.134);
-  }
-
-  80% {
-    transform: skew(-2deg) scaleY(1.16);
+  50% {
+    transform: scale(1.22);
   }
 
   100% {
-    transform: skew(0deg) scale(1.15);
+    transform: scale(1.15);
   }
 }
 
