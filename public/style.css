@@ -32,9 +32,15 @@ main {
   word-spacing: 4px;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 1rem 0;
   color: var(--text-theme);
+  font-family: Consolas;
 }
 
 .navbar {
@@ -144,15 +150,19 @@ h1 {
   0% {
     transform: skew(2deg) scaleY(1.154);
   }
+
   45% {
     transform: skew(-1deg) scaleX(1.164);
   }
+
   60% {
     transform: skew(0deg) scaleY(1.134);
   }
+
   80% {
     transform: skew(-2deg) scaleY(1.16);
   }
+
   100% {
     transform: skew(0deg) scale(1.15);
   }
