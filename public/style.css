@@ -40,6 +40,15 @@ h1 {
   height: 100vh;
   width: 5rem;
   background-color: var(--bg-primary);
+  transition: width 300ms ease-out, display 900ms;
+}
+
+.navbar:hover {
+  width: 13rem;
+}
+
+.navbar:hover .link-text {
+  display: block;
 }
 
 .navbar-nav {
@@ -47,7 +56,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  width: 5rem;
+  width: 100%;
 }
 
 .nav-item {
@@ -63,11 +72,25 @@ h1 {
   align-items: center;
   height: 5rem;
   color: var(--text-primary);
+  filter: opacity(0.7);
+  transition: filter 300ms;
 }
 
-.nav-link img {
+.nav-link:hover {
+  filter: none;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.nav-link:hover svg {
+  fill: #be1e59;
+}
+
+.nav-link svg {
   min-width: 2rem;
   margin: 0 1.5rem;
+  fill: var(--text-primary);
+  transition: color 300ms;
 }
 
 .link-text {
