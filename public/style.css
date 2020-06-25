@@ -26,11 +26,18 @@ body {
 
 header,
 main {
-  margin-left: 5rem;
+  margin-bottom: 5rem;
   padding: 1rem;
   line-height: 3rem;
   letter-spacing: 2px;
   word-spacing: 4px;
+  text-align: justify;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  margin-top: 3rem;
 }
 
 h1,
@@ -42,6 +49,7 @@ h6 {
   margin: 1rem 0;
   color: var(--text-theme);
   font-family: Consolas;
+  text-align: center;
 }
 
 hr {
@@ -60,22 +68,12 @@ hr {
 .navbar {
   font-family: Consolas;
   position: fixed;
-  height: 100vh;
-  width: 5rem;
   background-color: var(--bg-primary);
   transition: width var(--transition-speed) ease-out, display 900ms;
 }
 
-.navbar:hover {
-  width: 13rem;
-}
-
-.navbar:hover .link-text {
-  display: block;
-}
-
 .nav-item:hover svg {
-  transform: translateX(15%) scale(1.15);
+  transform: translate(5%, -15%) scale(1.15);
   transition: var(--transition-speed);
 }
 
@@ -85,13 +83,12 @@ hr {
 }
 
 .navbar:hover .logo svg {
-  transform: rotate(-360deg);
+  transform: rotate(-90deg);
 }
 
 .navbar-nav {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
 }
@@ -101,7 +98,6 @@ hr {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.3ch;
-  width: 100%;
   margin-bottom: 0.5rem;
   background-color: var(--bg-secondary);
   color: var(--text-secondary);
@@ -116,8 +112,7 @@ hr {
 }
 
 .navbar .logo svg {
-  transform: rotate(0deg);
-  transition: transform 1000ms;
+  transition: transform var(--transition-speed);
 }
 
 .nav-item {
@@ -171,6 +166,67 @@ hr {
 
   100% {
     transform: scale(1.15);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
+  }
+
+  #aliens,
+  #paradox,
+  .logo {
+    display: none;
+    width: 0;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+
+  header,
+  main {
+    margin-left: 5rem;
+  }
+
+  .navbar {
+    top: 0;
+    height: 100vh;
+    width: 5rem;
+  }
+
+  .navbar:hover {
+    width: 13rem;
+  }
+
+  .navbar:hover .link-text {
+    display: block;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .nav-item:hover svg {
+    transform: translateX(15%) scale(1.15);
+  }
+
+  .navbar .logo svg {
+    transition: transform 1000ms;
+  }
+
+  .navbar:hover .logo svg {
+    transform: rotate(-360deg);
+  }
+
+  .logo {
+    display: flex;
+    width: 100%;
   }
 }
 
